@@ -9,6 +9,9 @@
  * Press 'c' to toggle the interpolator path drawing.
  */
 
+import java.util.List;
+import java.util.ArrayList;
+
 import frames.input.*;
 import frames.primitives.*;
 import frames.core.*;
@@ -23,6 +26,7 @@ Scene scene;
 Interpolator interpolator;
 OrbitNode eye;
 boolean drawGrid = true, drawCtrl = true;
+ArrayList<Interpolador> interpoladores = new ArrayList<Interpolador>();
 
 //Choose P3D for a 3D scene, or P2D or JAVA2D for a 2D scene
 String renderer = P3D;
@@ -42,6 +46,11 @@ void setup() {
   // framesjs next version, simply go:
   //interpolator = new Interpolator(scene);
 
+  interpoladores.add( new Linear() );
+  interpoladores.add( new Hermite() );
+  interpoladores.add( new Linear() );
+  interpoladores.add( new Linear() );
+  
   // Using OrbitNodes makes path editable
   for (int i = 0; i < 8; i++) {
     Node ctrlPoint = new OrbitNode(scene);
@@ -69,15 +78,21 @@ void draw() {
   // implement me
   // draw curve according to control polygon an mode
   // To retrieve the positions of the control points do:
-  // for(Frame frame : interpolator.keyFrames())
-  //   frame.position();
+  List<Vector> puntos = new ArrayList<Vector>();
+  for (Frame f : interpolator.keyFrames()) {
+    puntos.add(f.position());
+  }
+  interpoladores.get(mode).setPoints(puntos);
+  interpoladores.get(mode).draw();
+    
 }
 
 void keyPressed() {
   if (key == ' ')
-    mode = mode < 3 ? mode+1 : 0;
+    mode = mode < interpoladores.size()-1 ? mode+1 : 0;
   if (key == 'g')
     drawGrid = !drawGrid;
   if (key == 'c')
     drawCtrl = !drawCtrl;
+  print(mode);
 }
