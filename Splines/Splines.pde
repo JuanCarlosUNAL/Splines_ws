@@ -7,6 +7,7 @@
  * Press ' ' to change the spline mode.
  * Press 'g' to toggle grid drawing.
  * Press 'c' to toggle the interpolator path drawing.
+ * Press 'r' to chnage the control points.
  */
 
 import java.util.List;
@@ -48,15 +49,10 @@ void setup() {
 
   interpoladores.add( new Linear() );
   interpoladores.add( new Hermite() );
-  interpoladores.add( new Linear() );
-  interpoladores.add( new Linear() );
+  interpoladores.add( new Bezier() );
+  interpoladores.add( new Hermite() );
   
-  // Using OrbitNodes makes path editable
-  for (int i = 0; i < 8; i++) {
-    Node ctrlPoint = new OrbitNode(scene);
-    ctrlPoint.randomize();
-    interpolator.addKeyFrame(ctrlPoint);
-  }
+  generateCtrlPoints();
 }
 
 void draw() {
@@ -82,6 +78,9 @@ void draw() {
   for (Frame f : interpolator.keyFrames()) {
     puntos.add(f.position());
   }
+  textSize(32);
+  fill(0, 102, 153);
+  text(interpoladores.get(mode).nombre(), 10, 60);
   interpoladores.get(mode).setPoints(puntos);
   interpoladores.get(mode).draw();
     
@@ -89,10 +88,21 @@ void draw() {
 
 void keyPressed() {
   if (key == ' ')
-    mode = mode < interpoladores.size()-1 ? mode+1 : 0;
+    mode = (mode+1 < interpoladores.size()) ? mode+1 : 0;
   if (key == 'g')
     drawGrid = !drawGrid;
   if (key == 'c')
     drawCtrl = !drawCtrl;
-  print(mode);
+  if(key == 'r')
+    generateCtrlPoints();
+}
+
+void generateCtrlPoints(){
+  interpolator.clear();
+  // Using OrbitNodes makes path editable
+  for (int i = 0; i < 8; i++) {
+    Node ctrlPoint = new OrbitNode(scene);
+    ctrlPoint.randomize();
+    interpolator.addKeyFrame(ctrlPoint);
+  }
 }
