@@ -32,6 +32,8 @@ ArrayList<Interpolador> interpoladores = new ArrayList<Interpolador>();
 //Choose P3D for a 3D scene, or P2D or JAVA2D for a 2D scene
 String renderer = P3D;
 
+float resolution = 0.1;
+
 void setup() {
   size(800, 800, renderer);
   scene = new Scene(this);
@@ -97,10 +99,18 @@ void keyPressed() {
     generateCtrlPoints();
   if(key == '+')
     augmentResolution();
+  if(key == '-')
+    reduceResolution();
 }
 
 void augmentResolution() {
-  
+  resolution *= 0.5;
+  interpoladores.get(mode).setResolution(resolution);
+}
+
+void reduceResolution() {
+  resolution *= 2;
+  interpoladores.get(mode).setResolution(resolution);
 }
 
 void generateCtrlPoints(){

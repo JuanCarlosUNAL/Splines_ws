@@ -1,6 +1,6 @@
 abstract class Interpolador{
 
-  float resolution;
+  float resolution = 0.1;
 
   public abstract String nombre();
   public abstract void setPoints(List<Vector> punto);

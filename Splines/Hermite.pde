@@ -1,7 +1,6 @@
 class Hermite extends Interpolador{
 
   List<Vector> points;
-  float spaceBetweenSamples = 0.1;
 
   @Override
   public String nombre(){
@@ -26,7 +25,7 @@ class Hermite extends Interpolador{
 
       Vector previousPoint = p0;
 
-      for(float t = 0 ; t < 1 ; t += spaceBetweenSamples) {
+      for(float t = 0 ; t < 1 ; t += resolution) {
         Vector firstHalf = Vector.add ( Vector.multiply(p0,h00(t)), Vector.multiply(m0,h10(t)) );
         Vector secondHalf = Vector.add ( Vector.multiply(p1,h01(t)), Vector.multiply(m1,h11(t)) );
 
