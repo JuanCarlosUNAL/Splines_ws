@@ -32,7 +32,7 @@ ArrayList<Interpolador> interpoladores = new ArrayList<Interpolador>();
 //Choose P3D for a 3D scene, or P2D or JAVA2D for a 2D scene
 String renderer = P3D;
 
-float resolution = 0.1;
+float resolution = 0.0125;
 
 void setup() {
   size(800, 800, renderer);

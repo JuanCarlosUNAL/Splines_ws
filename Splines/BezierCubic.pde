@@ -21,12 +21,14 @@ public class BezierCubic extends Interpolador {
   public void draw(){
     fill(0, 0, 255);
     stroke(0, 0, 0);
+    
     for(int i = 0; i < controlPoints.size() - 1; i+= 2){
       scene.drawPickingTarget( controlPoints.get(i) );
       scene.drawPickingTarget( controlPoints.get(i+1) );
       line(controlPoints.get(i).position(), controlPoints.get(i+1).position());
     }
 
+    stroke(255, 0, 255);
     for(Bezier b : groups){
       b.draw();
     }
