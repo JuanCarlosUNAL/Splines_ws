@@ -95,6 +95,12 @@ void keyPressed() {
     drawCtrl = !drawCtrl;
   if(key == 'r')
     generateCtrlPoints();
+  if(key == '+')
+    augmentResolution();
+}
+
+void augmentResolution() {
+  
 }
 
 void generateCtrlPoints(){

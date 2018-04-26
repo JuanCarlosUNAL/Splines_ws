@@ -1,4 +1,4 @@
-class Bezier implements Interpolador{
+class Bezier extends Interpolador{
 
   protected List<Vector> puntos;
   private float resolution = 0.01;

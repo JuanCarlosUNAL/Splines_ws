@@ -1,4 +1,4 @@
-class Linear implements Interpolador{
+class Linear extends Interpolador{
 
   protected List<Vector> puntos;
 

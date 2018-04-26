@@ -1,4 +1,4 @@
-class Hermite implements Interpolador{
+class Hermite extends Interpolador{
 
   List<Vector> points;
   float spaceBetweenSamples = 0.1;

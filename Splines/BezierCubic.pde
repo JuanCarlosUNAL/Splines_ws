@@ -1,4 +1,4 @@
-public class BezierCubic implements Interpolador {
+public class BezierCubic extends Interpolador {
   
   List<Bezier> groups = new ArrayList<Bezier>();
   List<Node> controlPoints = new ArrayList<Node>();
