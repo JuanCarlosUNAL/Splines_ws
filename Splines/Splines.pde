@@ -47,9 +47,9 @@ void setup() {
   // framesjs next version, simply go:
   //interpolator = new Interpolator(scene);
 
-  // interpoladores.add( new Linear() );
-  // interpoladores.add( new Bezier() );
-  // interpoladores.add( new BezierCubic() );
+  interpoladores.add( new Linear() );
+  interpoladores.add( new Bezier() );
+  interpoladores.add( new BezierCubic() );
   interpoladores.add( new Hermite() );
   
   generateCtrlPoints();
