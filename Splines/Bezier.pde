@@ -1,7 +1,6 @@
 class Bezier extends Interpolador{
 
   protected List<Vector> puntos;
-  private float resolution = 0.01;
 
   @Override
   public String nombre(){
