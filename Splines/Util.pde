@@ -1,4 +1,3 @@
 void line(Vector a, Vector b){
-  line(round(a.x()), round(a.y()), round(a.z()),
-        round(b.x()), round(b.y()), round(b.z()));
+  line(a.x(), a.y(), a.z(), b.x(), b.y(), b.z());
 }
