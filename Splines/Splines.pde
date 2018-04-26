@@ -105,12 +105,10 @@ void keyPressed() {
 
 void augmentResolution() {
   resolution *= 0.5;
-  interpoladores.get(mode).setResolution(resolution);
 }
 
 void reduceResolution() {
   resolution *= 2;
-  interpoladores.get(mode).setResolution(resolution);
 }
 
 void generateCtrlPoints(){
