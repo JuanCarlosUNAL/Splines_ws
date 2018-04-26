@@ -55,6 +55,6 @@ class Hermite extends Interpolador{
   }
 
   private Vector m(int k) {
-    return Vector.multiply( Vector.add( points.get(k - 1), points.get(k + 1) ), 0.5 );
+    return Vector.multiply( Vector.subtract( points.get(k + 1), points.get(k - 1) ), 0.5 );
   }
 }
