@@ -22,7 +22,20 @@ Complete la tabla:
 
 | Integrante | github nick |
 |------------|-------------|
-|            |             |
+|Andres Rondon| [amrondonp](https://github.com/amrondonp)             |
+|Raul Ramirez| [raulramirezp](https://github.com/raulramirezp)             |
+|Juan Carlos Gama| [JuanCarlosUNAL](https://github.com/JuanCarlosUNAL)             |
+
+## Ejecución
+
+Se usó la libreria [Jblas](http://jblas.org/) para facilitar algunas operaciones algebraicas ( como hallar inversa de una matriz nxn ), la puede instalar como se describe en la página web oficial, o, para mayor facilidad  y evitar problemas con processing puede hacer lo siguiente:
+
+* Acceder a la carpeta del sketchbook y entrar el directorio *libraries*
+* Allí crear los directorios recursivamente así: */org/jblas/library*
+* Copiar el archivo jblas.jar a ese nuevo directorio.
+* Si usa Linux se debería ver algo así: *~/sketchbook/libraries/org/jblas/library/jblas.jar*
+
+El archivo jblas.jar se encuentra en en el directorio jblas adjunto.
 
 ## Entrega
 

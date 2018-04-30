@@ -12,7 +12,6 @@
 
 import java.util.List;
 import java.util.ArrayList;
-
 import frames.input.*;
 import frames.primitives.*;
 import frames.core.*;
@@ -53,7 +52,7 @@ void setup() {
   interpoladores.add( new Bezier() );
   interpoladores.add( new BezierCubic() );
   interpoladores.add( new Hermite() );
-  
+  interpoladores.add( new Natural() );
   generateCtrlPoints();
 }
 
