@@ -28,14 +28,37 @@ Complete la tabla:
 
 ## Ejecución
 
-Se usó la libreria [Jblas](http://jblas.org/) para facilitar algunas operaciones algebraicas ( como hallar inversa de una matriz nxn ), la puede instalar como se describe en la página web oficial, o, para mayor facilidad  y evitar problemas con processing puede hacer lo siguiente:
+Se usó la libreria [Jblas](http://jblas.org/) para facilitar algunas operaciones algebraicas ( como hallar inversa de una matriz nxn ), la puede instalar como se describe en la página web oficial ó si usa linux:
+
+*   Ubuntu: 
+    ``` 
+    sudo apt-get install jblas
+    ```
+*   Fedora: 
+    ```
+    sudo dnf install jblas
+    ```
+
+
+Una vez instalada la librería, procedemos a:
 
 * Acceder a la carpeta del sketchbook y entrar el directorio *libraries*
 * Allí crear los directorios recursivamente así: */org/jblas/library*
 * Copiar el archivo jblas.jar a ese nuevo directorio.
-* Si usa Linux se debería ver algo así: *~/sketchbook/libraries/org/jblas/library/jblas.jar*
+* Si usa Linux se debería ver algo así: 
+```
+~/sketchbook/libraries/org/jblas/library/jblas.jar
+```
 
 El archivo jblas.jar se encuentra en en el directorio jblas adjunto.
+
+## Conclusiones
+
+* En la implementación del interpolador de Natural Cubic Splines, se tuvo dificultades a la hora de realizar la implementación, dado que en la literatura que se encuentra en internet, la mayoria de definiciones de esta se dan para interpolar una serie de puntos en 2D, e inicialmente se pensó que la generalización a 3D podría resultar más compleja, luego nos dimos cuenta que en realidad cada componente del nuevo punto en el espacio, calculado por el polimonio, era una implementación uni-dimensional. 
+
+* Se pudo observar que la curva obtenida con el algoritmo de Natural Cubic Spline, era más apróximada a la generada por el algoritmo de Hermite.
+
+
 
 ## Entrega
 
