@@ -60,6 +60,10 @@ El archivo jblas.jar se encuentra en en el directorio jblas adjunto.
 
 * Se entendió como implementar uniones entre grupos de interpolaciones para que produzca una curva suave, creando o modificando los puntos de control del método de interpolación. Incluso es posible cambiar estos puntos de control para que cambiar el aspecto de paso de un grupo de interpolación a otro ya que, no siempre es deseable tener un paso suave.
 
+* Se tuvieron algunas dificultades al momento de graficar las líneas debido a que se estaban redondeando las coordenadas de estas. 
+
+* Inicialmente, las derivadas del método de Hermite estaban siendo calculadas erroneamente. Lo cual, daba como resultado unas curvas con uniones no suaves en los puntos de interpolación. Afortunadamente, se logró identificar el problema subyacente y corregir adecuadamente la implementación, la cual, entre otras cosas, fue bastante similar a la representación proveida por el profesor.
+
 ## Entrega
 
 * Modo de entrega: Haga [fork](https://help.github.com/articles/fork-a-repo/) de la plantilla e informe la url del repo en la hoja *urls* de la plantilla compartida (una sola vez por grupo). Plazo: 29/4/18 a las 24h.
