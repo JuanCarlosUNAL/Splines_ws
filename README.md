@@ -58,7 +58,7 @@ El archivo jblas.jar se encuentra en en el directorio jblas adjunto.
 
 * Se pudo observar que la curva obtenida con el algoritmo de Natural Cubic Spline, era más apróximada a la generada por el algoritmo de Hermite.
 
-
+* Se entendió como implementar uniones entre grupos de interpolaciones para que produzca una curva suave, creando o modificando los puntos de control del método de interpolación. Incluso es posible cambiar estos puntos de control para que cambiar el aspecto de paso de un grupo de interpolación a otro ya que, no siempre es deseable tener un paso suave.
 
 ## Entrega
 
